@@ -1,0 +1,12 @@
+{
+  "name": "Andriy Vizoviy — робота та візи в Польщу",
+  "short_name": "Andriy Vizoviy",
+  "icons": [
+    { "src": "/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#0b1830",
+  "background_color": "#f5f3ee",
+  "display": "browser",
+  "start_url": "/"
+}

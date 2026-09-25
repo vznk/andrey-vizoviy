@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andriy-vizoviy.com.ua/sitemap.xml
