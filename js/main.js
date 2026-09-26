@@ -17,7 +17,6 @@
   //   viber_group_click — група у Viber
   //   telegram_click  — Telegram-канал
   //   instagram_click — Instagram (account: основний чи резервний)
-  //   directions_click — «Прокласти маршрут» до офісу
   //   review_click    — «Залишити відгук у Google»
   //   button_click    — усе інше (меню, фото, перегляд галереї)
   function sectionOf(el) {
@@ -71,11 +70,6 @@
 
     if (href.indexOf('instagram.com') > -1) {
       gtag('event', 'instagram_click', { account: href.split('instagram.com/')[1].replace(/[/?].*$/, ''), section: section, button_text: label });
-      return;
-    }
-
-    if (href.indexOf('google.com/maps/dir') > -1) {
-      gtag('event', 'directions_click', { section: section });
       return;
     }
 

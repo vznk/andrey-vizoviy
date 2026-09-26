@@ -34,8 +34,8 @@
        вантажимо тільки потрібні літери (параметр text). Додали новий <em> з іншими літерами —
        допишіть їх у text=… (або попросіть оновити). -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&display=swap&text=%200123456789%3F%D0%92%D0%B0%D0%B1%D0%B2%D0%B3%D0%B4%D0%B7%D0%B8%D0%B9%D0%BA%D0%BB%D0%BC%D0%BD%D0%BE%D0%BF%D1%80%D1%81%D1%82%D1%83%D1%85%D1%86%D1%88%D1%8C%D1%8E%D1%94%D1%96%D1%97" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&display=swap&text=%200123456789%3F%D0%92%D0%B0%D0%B1%D0%B2%D0%B3%D0%B4%D0%B7%D0%B8%D0%B9%D0%BA%D0%BB%D0%BC%D0%BD%D0%BE%D0%BF%D1%80%D1%81%D1%82%D1%83%D1%85%D1%86%D1%88%D1%8C%D1%8E%D1%94%D1%96%D1%97"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&display=swap&text=%200123456789%3F%D0%92%D0%B0%D0%B1%D0%B2%D0%B3%D0%B4%D0%B7%D0%B8%D0%B9%D0%BA%D0%BB%D0%BC%D0%BD%D0%BE%D0%BF%D1%80%D1%81%D1%82%D1%85%D1%88%D1%94%D1%96%D1%97" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&display=swap&text=%200123456789%3F%D0%92%D0%B0%D0%B1%D0%B2%D0%B3%D0%B4%D0%B7%D0%B8%D0%B9%D0%BA%D0%BB%D0%BC%D0%BD%D0%BE%D0%BF%D1%80%D1%81%D1%82%D1%85%D1%88%D1%94%D1%96%D1%97"></noscript>
   <!-- Стилі вбудовані в сторінку, щоб не чекати окремий файл. Редагуйте їх тут. -->
   <style>
 :root {
@@ -391,21 +391,15 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .clink--viber:hover { background: #6450ee; }
 .clink--viber small { color: rgba(255,255,255,.85); }
 
-.office { display: grid; gap: 16px; margin-top: 16px; }
-.office__info { padding: 24px 20px; border-radius: 28px; background: var(--surface); border: 1px solid var(--line); }
-.office__info h2 { font-size: clamp(26px, 7vw, 36px); }
-.office__address { margin: 14px 0 12px; font-style: normal; font-size: 18px; font-weight: 700; }
-.office__hours { list-style: none; margin: 0 0 20px; padding: 0; display: grid; gap: 6px; }
-.office__hours li { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 6px; border-bottom: 1px dashed var(--line); font-size: 15px; }
-.office__hours li:last-child { border-bottom: 0; }
-.office__hours span { color: var(--muted); }
-.office__actions { display: grid; gap: 10px; }
-.office__actions .btn { width: 100%; }
-.btn--dark { background: var(--navy); color: #fff; }
-.btn--dark:hover { background: var(--navy-2); }
-.stars { color: var(--gold); font-size: 18px; }
-.map { border-radius: 28px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); min-height: 320px; }
-.map iframe { display: block; width: 100%; height: 100%; min-height: 320px; border: 0; }
+.office { margin-top: 16px; }
+.office__info { display: grid; gap: 16px; padding: 22px 20px; border-radius: 28px; background: var(--surface); border: 1px solid var(--line); }
+.office__facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.office__facts li { display: flex; align-items: center; gap: 14px; }
+.office__facts .ico { width: 24px; height: 24px; color: var(--accent); flex: none; }
+.office__facts span { display: flex; flex-direction: column; line-height: 1.3; }
+.office__facts small { color: var(--muted); font-size: 14px; }
+.office__review { width: 100%; }
+.stars { color: var(--gold); font-size: 15px; letter-spacing: 1px; }
 
 .footer { padding: 24px var(--gutter) calc(100px + env(safe-area-inset-bottom)); text-align: center; color: var(--muted); font-size: 13px; }
 .footer p { margin: 0 0 4px; }
@@ -637,9 +631,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .contacts__intro { text-align: left; margin: 0; }
   .contacts__avatar { margin: 0 0 18px; }
   .contacts__intro p { margin-left: 0; }
-  .office { grid-template-columns: 0.8fr 1.2fr; gap: 20px; margin-top: 20px; }
-  .office__info { padding: 40px; }
-  .map, .map iframe { min-height: 420px; }
+  .office__info { grid-template-columns: 1fr auto; align-items: center; padding: 28px 40px; }
+  .office__facts { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .office__review { width: auto; }
   .footer { padding: 40px 40px 48px; }
   .dock { display: none; }
   .tg-popup { left: auto; right: 24px; bottom: 24px; width: 400px; }
@@ -1128,28 +1122,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
         </div>
       </div>
 
-      <!-- Офіс: адреса, години, карта. Дані з профілю Google Business -->
+      <!-- Довіра: офіційний офіс у Рівному, консультації онлайн, відгуки в Google.
+           Адресу, карту й маршрут навмисно не показуємо — консультуємо дистанційно. -->
       <div class="office" id="office">
         <div class="office__info">
-          <p class="eyebrow">Офіс у Рівному</p>
-          <h2>Приходьте <em>на консультацію</em></h2>
-          <address class="office__address">проспект Миру, 11, Рівне</address>
-          <ul class="office__hours" aria-label="Години роботи">
-            <li><span>Пн–Пт</span><b>09:00–18:00</b></li>
-            <li><span>Субота</span><b>10:00–16:00</b></li>
-            <li><span>Неділя</span><b>вихідний</b></li>
+          <ul class="office__facts">
+            <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span><b>Офіс у Рівному</b><small>Офіційно працюємо: ФОП Андрій Матвійчук</small></span></li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-viber"/></svg><span><b>Консультуємо онлайн</b><small>У Viber або телефоном — приїжджати не потрібно</small></span></li>
           </ul>
-          <div class="office__actions">
-            <a class="btn btn--dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=Andriy%20Vizoviy%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9C%D0%B8%D1%80%D1%83%2011%2C%20%D0%A0%D1%96%D0%B2%D0%BD%D0%B5&amp;destination_place_id=ChIJYap2RX0TL0cR-bDl1ooNLOw" target="_blank" rel="noopener">
-              <svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>Прокласти маршрут</span>
-            </a>
-            <a class="btn btn--ghost" href="https://search.google.com/local/writereview?placeid=ChIJYap2RX0TL0cR-bDl1ooNLOw" target="_blank" rel="noopener">
-              <span class="stars" aria-hidden="true">★</span><span>Залишити відгук у Google</span>
-            </a>
-          </div>
-        </div>
-        <div class="map">
-          <iframe src="https://maps.google.com/maps?q=Andriy%20Vizoviy%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9C%D0%B8%D1%80%D1%83%2011%2C%20%D0%A0%D1%96%D0%B2%D0%BD%D0%B5&amp;z=17&amp;hl=uk&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Офіс Andriy Vizoviy на карті: проспект Миру, 11, Рівне" allowfullscreen></iframe>
+          <a class="btn btn--ghost office__review" href="https://search.google.com/local/writereview?placeid=ChIJYap2RX0TL0cR-bDl1ooNLOw" target="_blank" rel="noopener">
+            <span class="stars" aria-hidden="true">★★★★★</span><span>Залишити відгук у Google</span>
+          </a>
         </div>
       </div>
     </section>
