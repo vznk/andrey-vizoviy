@@ -135,10 +135,19 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 1px 0 var(--line);
 }
-.topbar__brand { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; }
-.topbar__brand img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,.15); }
-.topbar__brand b { font-weight: 800; }
-.topbar:not(.is-solid) .topbar__brand { color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.4); }
+/* Логотип: глобус + ANDRIY (градієнт) / VIZOVIY */
+.logo { display: flex; align-items: center; gap: 8px; color: #0a0a0a; line-height: 1; }
+.logo__globe { width: 38px; height: 38px; flex: none; }
+.logo__text { display: flex; flex-direction: column; gap: 3px; text-transform: uppercase; }
+.logo__top {
+  font-size: 13px; font-weight: 600; letter-spacing: .06em;
+  background: linear-gradient(90deg, #4f9fc6, #7cc3df 45%, #2a68a3 75%, #2f6fd0);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.logo__bottom { font-size: 17px; font-weight: 800; letter-spacing: .01em; }
+.topbar:not(.is-solid) .logo { color: #fff; filter: drop-shadow(0 1px 6px rgba(0,0,0,.45)); }
+.topbar:not(.is-solid) .logo__top { background: linear-gradient(90deg, #bfe6f5, #fff 50%, #cfe2ff); -webkit-background-clip: text; background-clip: text; }
+.footer .logo { justify-content: center; margin-bottom: 12px; }
 .topbar__nav { display: none; }
 
 /* ---------- Hero ---------- */
@@ -590,7 +599,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   }
   .topbar:not(.is-solid) .topbar__nav { color: var(--ink); }
   .topbar__nav a:hover { color: var(--accent); }
-  .topbar:not(.is-solid) .topbar__brand { color: var(--ink); text-shadow: none; }
+  .topbar:not(.is-solid) .logo { color: #0a0a0a; filter: none; }
+  .topbar:not(.is-solid) .logo__top { background: linear-gradient(90deg, #4f9fc6, #7cc3df 45%, #2a68a3 75%, #2f6fd0); -webkit-background-clip: text; background-clip: text; }
 
   .hero {
     max-width: var(--wrap);
@@ -874,9 +884,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
   <!-- ============ ШАПКА ============ -->
   <header class="topbar" id="topbar">
-    <a class="topbar__brand" href="#top">
-      <picture><source type="image/webp" srcset="img/avatar-160.webp"><img src="img/avatar-160.jpg" alt="" width="40" height="40"></picture>
-      <span>Andriy <b>Vizoviy</b></span>
+    <a class="topbar__brand logo" href="#top" aria-label="Andriy Vizoviy — на початок">
+      <svg class="logo__globe" aria-hidden="true"><use href="#i-globe"/></svg>
+      <span class="logo__text"><span class="logo__top">Andriy</span><span class="logo__bottom">Vizoviy</span></span>
     </a>
     <nav class="topbar__nav" aria-label="Розділи">
       <a href="#about">Про мене</a>
@@ -1130,6 +1140,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   </main>
 
   <footer class="footer">
+    <div class="logo" aria-hidden="true"><svg class="logo__globe"><use href="#i-globe"/></svg><span class="logo__text"><span class="logo__top">Andriy</span><span class="logo__bottom">Vizoviy</span></span></div>
     <p>© <span id="year">2026</span> Andriy Vizoviy (ФОП Андрій Матвійчук)</p>
     <p class="footer__note">Надаємо інформаційні та консультаційні послуги. Рішення щодо видачі візи ухвалює консульство.</p>
   </footer>
@@ -1172,6 +1183,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 
   <!-- Іконки -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-globe" viewBox="170 170 684 684"><defs><linearGradient id="g-globe" x1="200" y1="180" x2="830" y2="850" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1f7c8c"/><stop offset=".42" stop-color="#7cc3df"/><stop offset=".7" stop-color="#1c4f8c"/><stop offset="1" stop-color="#3274d6"/></linearGradient></defs><path d="M182 512a330 330 0 1 1 660 0a330 330 0 1 1-660 0ZM512 182V842M512 182a148.5 330 0 1 0 0 660a148.5 330 0 1 0 0-660ZM182 512H842M248 330.5Q512 287.6 776 330.5M248 693.5Q512 650.6 776 693.5" fill="none" stroke="url(#g-globe)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-viber" viewBox="0 0 24 24"><path fill="currentColor" d="M11.4 1C7.3 1.1 4.2 1.9 2.6 3.4 1.2 4.9.7 7.1.6 9.8c-.1 2.7-.2 7.8 4.7 9.2v2.1s0 .9.5 1c.7.2 1-.4 1.7-1.1l1.2-1.4c3.3.3 5.9-.4 6.2-.5.7-.2 4.4-.7 5-5.7.6-5.2-.3-8.4-2-9.9C17.3 2.7 15 1 11.4 1Zm.2 1.6c3.1 0 5 1.3 5.4 1.7 1.4 1.2 2.1 4 1.6 8.3-.5 4-3.4 4.3-4 4.5-.2.1-2.4.6-5.1.4 0 0-2 2.4-2.7 3.1-.1.1-.2.1-.3.1-.1 0-.1-.2-.1-.4v-3.4C2.2 15.8 2.3 11.6 2.4 9.4c.1-2.3.5-4.1 1.7-5.3 1.5-1.3 4.4-1.5 7.5-1.5Zm.2 2.3c-.2 0-.2.3 0 .3 2.9 0 5.4 2 5.4 5.9 0 .3.4.3.4 0 0-4.1-2.7-6.2-5.8-6.2Zm-3.5.6c-.3 0-.6.1-.9.3-.5.4-1.1 1-.9 1.7 0 0 .1.6.9 2 .4.7.8 1.3 1.3 1.8.4.5 1 1 1.6 1.4 1.1.9 2.9 1.8 3.7 2 .7.2 1.4-.4 1.7-.9.2-.3.2-.7-.1-1l-1.4-1.1c-.4-.3-.9-.1-1.1.1l-.5.6c-.2.3-.7.3-.7.3-3.2-.8-4-4-4-4s0-.4.3-.7l.6-.5c.3-.2.4-.7.2-1.1-.3-.4-.7-1.1-1.1-1.5-.2-.2-.4-.3-.6-.3Zm3.8.8c-.2 0-.2.3 0 .3 1.9.1 2.9 1.2 3 3.2 0 .3.4.3.4 0-.1-2.2-1.3-3.5-3.4-3.5Zm.4 1.5c-.3 0-.3.3 0 .3.8 0 1.2.4 1.2 1.3 0 .3.4.3.4 0 0-1.1-.6-1.6-1.6-1.6Z"/></symbol>
     <symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" d="M21.9 4.4 18.8 19c-.2 1-.8 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.8-7.9c.4-.3-.1-.5-.6-.2L6.8 12.9 2.2 11.4c-1-.3-1-1 .2-1.5l17.9-6.9c.8-.3 1.6.2 1.6 1.4Z"/></symbol>
     <symbol id="i-instagram" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/></g><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></symbol>
