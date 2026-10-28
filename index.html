@@ -410,6 +410,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .footer { padding: 24px var(--gutter) calc(100px + env(safe-area-inset-bottom)); text-align: center; color: var(--muted); font-size: 13px; }
 .footer p { margin: 0 0 4px; }
 .footer__note { font-size: 12px; max-width: 44ch; margin: 0 auto !important; }
+.footer__dev {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 16px;
+  padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px;
+  font-size: 12px; color: var(--muted); transition: color .2s, border-color .2s;
+}
+.footer__dev b { font-weight: 600; color: var(--ink); }
+.footer__dev:hover { color: var(--ink); border-color: var(--ink); }
 
 /* ---------- Липка панель (мобільний) ---------- */
 .dock {
@@ -1143,6 +1150,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
     <div class="logo" aria-hidden="true"><svg class="logo__globe"><use href="#i-globe"/></svg><span class="logo__text"><span class="logo__top">Andriy</span><span class="logo__bottom">Vizoviy</span></span></div>
     <p>© <span id="year">2026</span> Andriy Vizoviy (ФОП Андрій Матвійчук)</p>
     <p class="footer__note">Надаємо інформаційні та консультаційні послуги. Рішення щодо видачі візи ухвалює консульство.</p>
+    <a class="footer__dev" href="https://zavalniuk.dev" target="_blank" rel="noopener">Розробка сайту — <b>zavalniuk.dev</b> <span aria-hidden="true">↗</span></a>
   </footer>
 
   <!-- Липка панель на мобільному -->
